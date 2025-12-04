@@ -21,7 +21,12 @@ public class publisher {
      publisherService.publishTextMessage(text, queueName);
 
     }
+    @PostMapping("/publish/json")
+    public void publishJson(@RequestBody String text){
+        System.out.println("Sending message : " + text);
+        publisherService.publishJsonMessage(text, queueName);
 
+    }
 
 
 }
